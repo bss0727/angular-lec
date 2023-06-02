@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { INFORMATION } from '../Mytype';
 
 declare type MyCustomType = {
   text : any;
@@ -24,8 +25,8 @@ export class LoginComponent implements OnInit {
     text :'',
     number : 1234
   };
-  constructor() { 
-    
+  constructor(@Inject("sending_name") my_type : INFORMATION) { 
+    console.log(my_type);
   }
   ngOnInit(): void {
     
